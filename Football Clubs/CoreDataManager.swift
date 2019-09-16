@@ -9,7 +9,6 @@
 import CoreData
 
 struct CoreDataManager {
-    
     static let shared = CoreDataManager()
     
     let persistentContainer: NSPersistentContainer = {
@@ -18,11 +17,12 @@ struct CoreDataManager {
         let container = NSPersistentContainer(name: "FootballClubs")
         container.loadPersistentStores { (storeDescription, err) in
             if let err = err {
-                fatalError("Loading of store failed \(err.localizedDescription)")
+                fatalError("Loading of persistentStore failed \(err.localizedDescription)")
             }
         }
         return container
     }()
+    
     
     func fetchClubs() -> [Clubs] {
         let context = persistentContainer.viewContext
@@ -33,7 +33,7 @@ struct CoreDataManager {
             return clubs
             
         } catch let fetchErr {
-            print("Failed to fetch: ", fetchErr.localizedDescription)
+            print("Failed to fetch clubs: ", fetchErr.localizedDescription)
             return []
         }
     }
@@ -56,6 +56,7 @@ struct CoreDataManager {
         do {
             try context.save()
             return (player, nil)
+            
         } catch let saveErr {
             print("Failed to create player ", saveErr)
             return (nil, saveErr)

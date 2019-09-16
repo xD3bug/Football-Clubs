@@ -12,6 +12,7 @@
 		BE3F997D232FED3E00579204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE3F997C232FED3E00579204 /* Assets.xcassets */; };
 		BE3F9980232FED3E00579204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3F997E232FED3E00579204 /* LaunchScreen.storyboard */; };
 		BE3F9989233003E700579204 /* Uicolor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F9988233003E700579204 /* Uicolor+theme.swift */; };
+		BE5BBEA22330450B00C7FAA4 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5BBEA12330450B00C7FAA4 /* CustomNavigationController.swift */; };
 		BE8052C0233031BD00B02B8E /* PlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8052BF233031BD00B02B8E /* PlayersController.swift */; };
 		BE8052C22330340100B02B8E /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8052C12330340100B02B8E /* PlayerPosition.swift */; };
 		BE9AD84A23300AC100F34D8F /* FootballClubs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE9AD84823300AC100F34D8F /* FootballClubs.xcdatamodeld */; };
@@ -35,6 +36,7 @@
 		BE3F997F232FED3E00579204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE3F9981232FED3E00579204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE3F9988233003E700579204 /* Uicolor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uicolor+theme.swift"; sourceTree = "<group>"; };
+		BE5BBEA12330450B00C7FAA4 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		BE8052BF233031BD00B02B8E /* PlayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersController.swift; sourceTree = "<group>"; };
 		BE8052C12330340100B02B8E /* PlayerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPosition.swift; sourceTree = "<group>"; };
 		BE9AD84923300AC100F34D8F /* FootballClubs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FootballClubs.xcdatamodel; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				BE3F9988233003E700579204 /* Uicolor+theme.swift */,
 				BE9AD8542330155C00F34D8F /* UIViewController+Helpers.swift */,
 				BED2E2AE23304291007486DF /* IndentedLabel.swift */,
+				BE5BBEA12330450B00C7FAA4 /* CustomNavigationController.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				BED2E2AD2330418B007486DF /* PlayersController+TableView.swift in Sources */,
 				BE9AD84C23300B9000F34D8F /* CoreDataManager.swift in Sources */,
 				BE8052C0233031BD00B02B8E /* PlayersController.swift in Sources */,
+				BE5BBEA22330450B00C7FAA4 /* CustomNavigationController.swift in Sources */,
 				BE3F9976232FED3C00579204 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
