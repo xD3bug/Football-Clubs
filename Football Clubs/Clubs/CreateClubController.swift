@@ -16,6 +16,8 @@ protocol CreateClubControllerDelegate {
 
 class CreateClubController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var delegate: CreateClubControllerDelegate?
+    
     var club: Clubs? {
         didSet {
             nameTextField.text = club?.name
@@ -29,8 +31,6 @@ class CreateClubController: UIViewController, UIImagePickerControllerDelegate, U
             datePicker.date = founded
         }
     }
-    
-    var delegate: CreateClubControllerDelegate?
     
     lazy var clubImageView: UIImageView = {
         let imageiew = UIImageView()
@@ -66,10 +66,8 @@ class CreateClubController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        
         view.backgroundColor = .darkBlue
-        
+        setupUI()
         setUpCancelButton()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleSave))
@@ -77,47 +75,18 @@ class CreateClubController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationItem.title = club == nil ? "Create Club" : "Edit Cclub"
     }
     
-    private func setupUI() {
-        let lightBlueBackgroundView = setupLightBlueBackgroundView(height: 350)
-        
-        view.addSubview(clubImageView)
-        clubImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8).isActive = true
-        clubImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        clubImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        clubImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        
-        view.addSubview(nameLabel)
-        nameLabel.topAnchor.constraint(equalTo: clubImageView.bottomAnchor).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        view.addSubview(nameTextField)
-        nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
-        nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        nameTextField.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
-        nameTextField.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-        
-        view.addSubview(datePicker)
-        datePicker.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-        datePicker.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        datePicker.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        datePicker.bottomAnchor.constraint(equalTo: lightBlueBackgroundView.bottomAnchor).isActive = true
-        
-    }
-    
     @objc private func handleSave() {
-        
         if club == nil {
             createClub()
         } else {
             saveClubChanges()
         }
     }
+    
+    // MARK: Insert and Edit inside Core Data
     
     // Create new Club inside Core Data
     private func createClub() {
@@ -161,7 +130,6 @@ class CreateClubController: UIViewController, UIImagePickerControllerDelegate, U
         do {
             try context.save()
             
-            // Save succeeded
             dismiss(animated: true) {
                 self.delegate?.didEditClub(club: self.club!)
             }
@@ -170,6 +138,8 @@ class CreateClubController: UIViewController, UIImagePickerControllerDelegate, U
         }
         
     }
+    
+    // MARK: Code for working with selected image
     
     @objc private func handleSelectPhoto() {
         print("Trying to select photo")
@@ -207,6 +177,37 @@ class CreateClubController: UIViewController, UIImagePickerControllerDelegate, U
         clubImageView.clipsToBounds = true
         clubImageView.layer.borderColor = UIColor.darkBlue.cgColor
         clubImageView.layer.borderWidth = 2
+    }
+    
+    
+    // MARK: AutoLayout Stuff
+    
+    private func setupUI() {
+        let lightBlueBackgroundView = setupLightBlueBackgroundView(height: 350)
+        
+        view.addSubview(clubImageView)
+        clubImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 8).isActive = true
+        clubImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        clubImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        clubImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        view.addSubview(nameLabel)
+        nameLabel.topAnchor.constraint(equalTo: clubImageView.bottomAnchor).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        view.addSubview(nameTextField)
+        nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
+        nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        nameTextField.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
+        nameTextField.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        
+        view.addSubview(datePicker)
+        datePicker.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        datePicker.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        datePicker.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        datePicker.bottomAnchor.constraint(equalTo: lightBlueBackgroundView.bottomAnchor).isActive = true
     }
 }
 
