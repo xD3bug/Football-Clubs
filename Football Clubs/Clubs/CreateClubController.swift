@@ -75,7 +75,7 @@ class CreateClubController: UIViewController, UIImagePickerControllerDelegate, U
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationItem.title = club == nil ? "Create Club" : "Edit Cclub"
+        navigationItem.title = club == nil ? "Create Club" : "Edit Club"
     }
     
     @objc private func handleSave() {

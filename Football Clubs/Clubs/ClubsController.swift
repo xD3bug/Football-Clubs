@@ -14,6 +14,7 @@ class ClubsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        clubs = CoreDataManager.shared.fetchClubs()
         
         navigationItem.title = "Football Clubs"
         
@@ -26,8 +27,5 @@ class ClubsController: UITableViewController {
         
         tableView.register(ClubCell.self, forCellReuseIdentifier: "cellId")
     }
-
-
-
 }
 

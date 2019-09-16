@@ -12,6 +12,8 @@
 		BE3F997D232FED3E00579204 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE3F997C232FED3E00579204 /* Assets.xcassets */; };
 		BE3F9980232FED3E00579204 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE3F997E232FED3E00579204 /* LaunchScreen.storyboard */; };
 		BE3F9989233003E700579204 /* Uicolor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3F9988233003E700579204 /* Uicolor+theme.swift */; };
+		BE8052C0233031BD00B02B8E /* PlayersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8052BF233031BD00B02B8E /* PlayersController.swift */; };
+		BE8052C22330340100B02B8E /* PlayerPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8052C12330340100B02B8E /* PlayerPosition.swift */; };
 		BE9AD84A23300AC100F34D8F /* FootballClubs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE9AD84823300AC100F34D8F /* FootballClubs.xcdatamodeld */; };
 		BE9AD84C23300B9000F34D8F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AD84B23300B9000F34D8F /* CoreDataManager.swift */; };
 		BE9AD84F23300F4400F34D8F /* ClubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AD84E23300F4400F34D8F /* ClubCell.swift */; };
@@ -20,6 +22,7 @@
 		BE9AD8552330155C00F34D8F /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AD8542330155C00F34D8F /* UIViewController+Helpers.swift */; };
 		BE9AD8572330187B00F34D8F /* ClubsController+CreateClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AD8562330187B00F34D8F /* ClubsController+CreateClub.swift */; };
 		BE9AD85923301A4400F34D8F /* ClubsController+NavActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AD85823301A4300F34D8F /* ClubsController+NavActions.swift */; };
+		BED2E2AB23303659007486DF /* CreatePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED2E2AA23303659007486DF /* CreatePlayerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,8 @@
 		BE3F997F232FED3E00579204 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE3F9981232FED3E00579204 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE3F9988233003E700579204 /* Uicolor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Uicolor+theme.swift"; sourceTree = "<group>"; };
+		BE8052BF233031BD00B02B8E /* PlayersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersController.swift; sourceTree = "<group>"; };
+		BE8052C12330340100B02B8E /* PlayerPosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPosition.swift; sourceTree = "<group>"; };
 		BE9AD84923300AC100F34D8F /* FootballClubs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FootballClubs.xcdatamodel; sourceTree = "<group>"; };
 		BE9AD84B23300B9000F34D8F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		BE9AD84E23300F4400F34D8F /* ClubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCell.swift; sourceTree = "<group>"; };
@@ -38,6 +43,7 @@
 		BE9AD8542330155C00F34D8F /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
 		BE9AD8562330187B00F34D8F /* ClubsController+CreateClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClubsController+CreateClub.swift"; sourceTree = "<group>"; };
 		BE9AD85823301A4300F34D8F /* ClubsController+NavActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClubsController+NavActions.swift"; sourceTree = "<group>"; };
+		BED2E2AA23303659007486DF /* CreatePlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		BE3F9974232FED3C00579204 /* Football Clubs */ = {
 			isa = PBXGroup;
 			children = (
+				BE8052BE2330319A00B02B8E /* Players */,
 				BE3F99872330038100579204 /* Helpers */,
 				BE3F9975232FED3C00579204 /* AppDelegate.swift */,
 				BE9AD84D23300F2600F34D8F /* Clubs */,
@@ -89,6 +96,16 @@
 				BE9AD8542330155C00F34D8F /* UIViewController+Helpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BE8052BE2330319A00B02B8E /* Players */ = {
+			isa = PBXGroup;
+			children = (
+				BE8052BF233031BD00B02B8E /* PlayersController.swift */,
+				BE8052C12330340100B02B8E /* PlayerPosition.swift */,
+				BED2E2AA23303659007486DF /* CreatePlayerController.swift */,
+			);
+			path = Players;
 			sourceTree = "<group>";
 		};
 		BE9AD84D23300F2600F34D8F /* Clubs */ = {
@@ -178,12 +195,15 @@
 				BE9AD84F23300F4400F34D8F /* ClubCell.swift in Sources */,
 				BE9AD8512330106C00F34D8F /* ClubsController+TableView.swift in Sources */,
 				BE9AD853233012AD00F34D8F /* CreateClubController.swift in Sources */,
+				BED2E2AB23303659007486DF /* CreatePlayerController.swift in Sources */,
 				BE9AD8552330155C00F34D8F /* UIViewController+Helpers.swift in Sources */,
 				BE9AD85923301A4400F34D8F /* ClubsController+NavActions.swift in Sources */,
 				BE3F9989233003E700579204 /* Uicolor+theme.swift in Sources */,
 				BE9AD8572330187B00F34D8F /* ClubsController+CreateClub.swift in Sources */,
 				BE9AD84A23300AC100F34D8F /* FootballClubs.xcdatamodeld in Sources */,
+				BE8052C22330340100B02B8E /* PlayerPosition.swift in Sources */,
 				BE9AD84C23300B9000F34D8F /* CoreDataManager.swift in Sources */,
+				BE8052C0233031BD00B02B8E /* PlayersController.swift in Sources */,
 				BE3F9976232FED3C00579204 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

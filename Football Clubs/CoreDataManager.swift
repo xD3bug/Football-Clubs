@@ -38,5 +38,29 @@ struct CoreDataManager {
         }
     }
     
+    
+    func createPlayer(playerName: String, birthDay: Date, playerPosition: String, club: Clubs) -> (Players?, Error?) {
+        
+        let context = persistentContainer.viewContext
+        let player = NSEntityDescription.insertNewObject(forEntityName: "Players", into: context) as! Players
+        
+        player.clubs = club
+        player.position = playerPosition
+        player.name = playerName
+        
+        let playerInformation = NSEntityDescription.insertNewObject(forEntityName: "PlayerInformation", into: context) as! PlayerInformation
+        
+        playerInformation.birthday = birthDay
+        player.playerInformation = playerInformation
+        
+        do {
+            try context.save()
+            return (player, nil)
+        } catch let saveErr {
+            print("Failed to create player ", saveErr)
+            return (nil, saveErr)
+        }
+    }
+    
 }
 

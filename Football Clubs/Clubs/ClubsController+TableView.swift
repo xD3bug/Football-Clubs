@@ -10,6 +10,14 @@ import UIKit
 
 extension ClubsController {
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let club = self.clubs[indexPath.row]
+        let playersController = PlayersController()
+        playersController.club = club
+        navigationController?.pushViewController(playersController, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (_, indexPath) in

@@ -4,13 +4,21 @@
         <attribute name="founded" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="imageData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="players" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Players" inverseName="clubs" inverseEntity="Players" syncable="YES"/>
+    </entity>
+    <entity name="PlayerInformation" representedClassName="PlayerInformation" syncable="YES" codeGenerationType="class">
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="player" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Players" inverseName="playerInformation" inverseEntity="Players" syncable="YES"/>
     </entity>
     <entity name="Players" representedClassName="Players" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="clubs" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Clubs" inverseName="players" inverseEntity="Clubs" syncable="YES"/>
+        <relationship name="playerInformation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PlayerInformation" inverseName="player" inverseEntity="PlayerInformation" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Clubs" positionX="-63" positionY="-18" width="128" height="90"/>
-        <element name="Players" positionX="-54" positionY="18" width="128" height="75"/>
+        <element name="Clubs" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="PlayerInformation" positionX="-63" positionY="27" width="128" height="75"/>
+        <element name="Players" positionX="-54" positionY="18" width="128" height="105"/>
     </elements>
 </model>
