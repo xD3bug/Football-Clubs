@@ -15,7 +15,6 @@ protocol CreatePlayerControllerDelegate {
 class CreatePlayerController: UIViewController {
     
     var club: Clubs?
-    
     var delegate: CreatePlayerControllerDelegate?
     
     let nameLabel: UILabel = {
@@ -46,18 +45,6 @@ class CreatePlayerController: UIViewController {
         return textField
     }()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.title = "Create Player"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleSave))
-        setUpCancelButton()
-        
-        view.backgroundColor = .darkBlue
-        setupUI()
-        
-    }
-    
     let playerPositionSegmentedControl: UISegmentedControl = {
         let types = [
             PlayerPosition.Defender.rawValue,
@@ -71,38 +58,14 @@ class CreatePlayerController: UIViewController {
         return sc
     }()
     
-    private func setupUI() {
-        _ = setupLightBlueBackgroundView(height: 150)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .darkBlue
+        setupUI()
+        setUpCancelButton()
         
-        view.addSubview(nameLabel)
-        nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        view.addSubview(nameTextField)
-        nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
-        nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        nameTextField.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
-        nameTextField.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-        
-        view.addSubview(birthdayLabel)
-        birthdayLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
-        birthdayLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        birthdayLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        birthdayLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        view.addSubview(birthdayTextField)
-        birthdayTextField.leftAnchor.constraint(equalTo: birthdayLabel.rightAnchor).isActive = true
-        birthdayTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        birthdayTextField.topAnchor.constraint(equalTo: birthdayLabel.topAnchor).isActive = true
-        birthdayTextField.bottomAnchor.constraint(equalTo: birthdayLabel.bottomAnchor).isActive = true
-        
-        view.addSubview(playerPositionSegmentedControl)
-        playerPositionSegmentedControl.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor, constant: 0).isActive = true
-        playerPositionSegmentedControl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
-        playerPositionSegmentedControl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
-        playerPositionSegmentedControl.heightAnchor.constraint(equalToConstant: 34).isActive = true
+        navigationItem.title = "Create Player"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleSave))
     }
     
     @objc private func handleSave() {
@@ -153,5 +116,38 @@ class CreatePlayerController: UIViewController {
         present(allertController, animated: true, completion: nil)
     }
     
+    private func setupUI() {
+        _ = setupLightBlueBackgroundView(height: 150)
+        
+        view.addSubview(nameLabel)
+        nameLabel.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        nameLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        nameLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        nameLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        view.addSubview(nameTextField)
+        nameTextField.leftAnchor.constraint(equalTo: nameLabel.rightAnchor).isActive = true
+        nameTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        nameTextField.topAnchor.constraint(equalTo: nameLabel.topAnchor).isActive = true
+        nameTextField.bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        
+        view.addSubview(birthdayLabel)
+        birthdayLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor).isActive = true
+        birthdayLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        birthdayLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        birthdayLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        view.addSubview(birthdayTextField)
+        birthdayTextField.leftAnchor.constraint(equalTo: birthdayLabel.rightAnchor).isActive = true
+        birthdayTextField.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        birthdayTextField.topAnchor.constraint(equalTo: birthdayLabel.topAnchor).isActive = true
+        birthdayTextField.bottomAnchor.constraint(equalTo: birthdayLabel.bottomAnchor).isActive = true
+        
+        view.addSubview(playerPositionSegmentedControl)
+        playerPositionSegmentedControl.topAnchor.constraint(equalTo: birthdayLabel.bottomAnchor, constant: 0).isActive = true
+        playerPositionSegmentedControl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16).isActive = true
+        playerPositionSegmentedControl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16).isActive = true
+        playerPositionSegmentedControl.heightAnchor.constraint(equalToConstant: 34).isActive = true
+    }
     
 }

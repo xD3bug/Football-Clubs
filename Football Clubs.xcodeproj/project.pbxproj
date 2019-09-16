@@ -23,6 +23,8 @@
 		BE9AD8572330187B00F34D8F /* ClubsController+CreateClub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AD8562330187B00F34D8F /* ClubsController+CreateClub.swift */; };
 		BE9AD85923301A4400F34D8F /* ClubsController+NavActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9AD85823301A4300F34D8F /* ClubsController+NavActions.swift */; };
 		BED2E2AB23303659007486DF /* CreatePlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED2E2AA23303659007486DF /* CreatePlayerController.swift */; };
+		BED2E2AD2330418B007486DF /* PlayersController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED2E2AC2330418B007486DF /* PlayersController+TableView.swift */; };
+		BED2E2AF23304291007486DF /* IndentedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED2E2AE23304291007486DF /* IndentedLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		BE9AD8562330187B00F34D8F /* ClubsController+CreateClub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClubsController+CreateClub.swift"; sourceTree = "<group>"; };
 		BE9AD85823301A4300F34D8F /* ClubsController+NavActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClubsController+NavActions.swift"; sourceTree = "<group>"; };
 		BED2E2AA23303659007486DF /* CreatePlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerController.swift; sourceTree = "<group>"; };
+		BED2E2AC2330418B007486DF /* PlayersController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayersController+TableView.swift"; sourceTree = "<group>"; };
+		BED2E2AE23304291007486DF /* IndentedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndentedLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 			children = (
 				BE3F9988233003E700579204 /* Uicolor+theme.swift */,
 				BE9AD8542330155C00F34D8F /* UIViewController+Helpers.swift */,
+				BED2E2AE23304291007486DF /* IndentedLabel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 				BE8052BF233031BD00B02B8E /* PlayersController.swift */,
 				BE8052C12330340100B02B8E /* PlayerPosition.swift */,
 				BED2E2AA23303659007486DF /* CreatePlayerController.swift */,
+				BED2E2AC2330418B007486DF /* PlayersController+TableView.swift */,
 			);
 			path = Players;
 			sourceTree = "<group>";
@@ -200,8 +206,10 @@
 				BE9AD85923301A4400F34D8F /* ClubsController+NavActions.swift in Sources */,
 				BE3F9989233003E700579204 /* Uicolor+theme.swift in Sources */,
 				BE9AD8572330187B00F34D8F /* ClubsController+CreateClub.swift in Sources */,
+				BED2E2AF23304291007486DF /* IndentedLabel.swift in Sources */,
 				BE9AD84A23300AC100F34D8F /* FootballClubs.xcdatamodeld in Sources */,
 				BE8052C22330340100B02B8E /* PlayerPosition.swift in Sources */,
+				BED2E2AD2330418B007486DF /* PlayersController+TableView.swift in Sources */,
 				BE9AD84C23300B9000F34D8F /* CoreDataManager.swift in Sources */,
 				BE8052C0233031BD00B02B8E /* PlayersController.swift in Sources */,
 				BE3F9976232FED3C00579204 /* AppDelegate.swift in Sources */,
