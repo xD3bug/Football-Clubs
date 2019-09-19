@@ -1,6 +1,6 @@
 # Football-Clubs
 
-Всем привет. Проект Футбольные клубы позволяет добавить клубы и игроков в них. 
+Всем привет.
 
 Использовал: Core Data, UINavigationController, UITableViewController, UIImagePickerController. 
 
